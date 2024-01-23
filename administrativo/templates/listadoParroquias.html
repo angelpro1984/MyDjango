@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Listado de Parroquias - formato 1
+{% endblock %}
+
+
+{% block content %}
+<h2>Listado de Parroquias</h2>
+<h3>Número de parroquias {{ numero_parroquias }}</h3>
+<br/>
+<br/>
+
+{% for p in parroquias %}
+
+  {{p}}<br/>
+
+{% endfor %}
+
+{% endblock %}

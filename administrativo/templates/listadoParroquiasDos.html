@@ -1,0 +1,35 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Listado de Parroquias
+{% endblock %}
+
+{% block content %}
+
+<h2>Listado de Parroquias</h2>
+<h3>Número de parroquias {{ numero_parroquias }}</h3>
+<table>
+<tr>
+  <td>Nombre</td>
+  <td>Distrito</td>
+  <td>Año</td>
+  <td>Número de Barrios</td>
+  <td>Opciones</td>
+</tr>  
+{% for p in parroquias %}
+
+<tr>
+  <td>{{p.nombre_parroquia}}</td>
+  <td>{{p.distrito}}</td>
+  <td>{{p.anio_creacion}}</td>
+  <td>{{p.num_barrios}}</td>
+  <td>
+     <span><a href="{% url 'editarParroquia' p.id%}">editar</a></span>
+     <br/>
+     <span><a href="{% url 'crearParroquia' %}">agregar parroquia</a></span>
+   </td>
+</tr>  
+{% endfor %}
+
+</table>
+{% endblock %}

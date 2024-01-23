@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+{% block title %}
+  Crear Parroquia 
+{% endblock %}
+
+
+{% block content %}
+<h2>Crear Parroquia</h2>
+
+<form action="" method="post">
+  {% csrf_token %}
+  {{formulario.as_p}}
+  <p><input type='submit' value='Agregar'/></p>
+</form>
+
+{% endblock %}

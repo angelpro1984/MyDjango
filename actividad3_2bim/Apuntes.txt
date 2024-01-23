@@ -1,0 +1,33 @@
+'Inserción de datos (Se ingresa los datos en el Shell de Django)
+
+# Primero, se importa las clases del modelo
+
+from administrativo.models import Ciudad, Parroquia
+c1 = Ciudad(nombre_ciudad="Quito",anio_fundacion=1534,num_parques=500,num_monumentos=100,presupuesto_anual=1009.1,clima="frío")
+c2 = Ciudad(nombre_ciudad="Loja",anio_fundacion=1548,num_parques=15,num_monumentos=55,presupuesto_anual=84.0,clima="frío")
+
+c1.save()
+c2.save()
+
+
+p1 = Parroquia(nombre_parroquia="Concepción",distrito="Norte",anio_creacion=1950,num_barrios=14,ciudad=c1)
+p2 = Parroquia(nombre_parroquia="Chillogallo",distrito="Sur",anio_creacion=1945,num_barrios=40,ciudad=c1)
+p3 = Parroquia(nombre_parroquia="Gualea",distrito="Rural",anio_creacion=1955,num_barrios=15,ciudad=c1)
+p4 = Parroquia(nombre_parroquia="Vilcabamba",distrito="Rural",anio_creacion=1955,num_barrios=8,ciudad=c2)
+
+p1.save()
+p2.save()
+p3.save()
+p4.save()
+
+
+ciudades=Ciudad.objects.all()
+for c in ciudades: print c()
+
+
+user: angel
+clave: Ecuador23
+
+
+http://127.0.0.1:8000/administrativo/listado-parroquias/
+python manage.py runserver

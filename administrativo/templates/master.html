@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+      <header>
+        <h1>Aplicación Administración </h1>
+        <nav class="top_menu">
+          <ul>
+            <li>[<a href="{% url 'listadoParroquiasDos' %}">Inicio</a>]</li>
+            <li>[<a href="{% url 'crearParroquia' %}">+ Parroquia</a>]</li>
+            <li>[<a href="{% url 'listadoParroquias' %}">Listado 2</a>]</li>
+            <li>[<a href="https://github.com/angelpro1984">Contacto</a>]</li>
+          </ul>
+        </nav>
+      </header>
+    <hr>
+    <section>
+      {% block content %}
+      {% endblock %}
+    </section>
+    <hr>
+    <footer>
+      <p>Desarrollo Basado en Plataformas Web</p>
+      <p>{% now "" %}</p>
+      <p>Ángel Proaño</p>
+    </footer>
+  </body>
+</html>
